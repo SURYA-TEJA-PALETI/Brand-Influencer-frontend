@@ -1,0 +1,48 @@
+
+
+
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+  
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* button:hover {
+    background-color: #45a049;
+  }
+   */
+
+  .navbar-custom {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+ 
+}
+
+/* .section1 {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+  } */
+  
+.navbar-nav a {
+    font-weight: bold;
+  }
+  

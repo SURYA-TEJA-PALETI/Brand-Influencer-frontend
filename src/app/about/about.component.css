@@ -1,0 +1,18 @@
+.image {
+    /* height: 40em; */
+    background-size: cover;
+    width: auto;
+    background-image: url('../../assets/about-background.jpg');
+    background-position: 50% 50%;
+    /* padding-bottom: 48%; */
+  }
+  
+  .content {
+    width: 70%;
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+    padding: 3%;
+    margin-left: 15%;
+    opacity: 0.5;
+    color: white;
+  }
+    

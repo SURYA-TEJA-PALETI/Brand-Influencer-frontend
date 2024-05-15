@@ -1,0 +1,23 @@
+<nav class="navbar navbar-custom navbar-expand-md ">
+    <div> <a class="navbar-brand "style="color: black;"  href="#">
+         <h2>CollabHere!</h2>
+     </a></div>
+     <!-- <form class="form-inline px-3"> -->
+         <ul class="navbar-nav ">
+            
+             <li>
+                 <a  *ngIf="!hardcodedauthenticationService.isUserLoggedIn()" routerLink="about" class="nav-link" style="color:black;" routerLinkActive="active">About us</a>
+                
+                </li>
+                <li>
+                <a  *ngIf="!hardcodedauthenticationService.isUserLoggedIn()" routerLink="contact" class="nav-link" style="color:black;" routerLinkActive="active">Contact us</a>
+                </li>
+            </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><button *ngIf="!hardcodedauthenticationService.isUserLoggedIn()" routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li> 
+            <li><button *ngIf="!hardcodedauthenticationService.isUserLoggedIn()" routerLink="signup" type="button" class="btn btn-primary mr-3">Sign up</button></li> 
+            <li><a *ngIf="hardcodedauthenticationService.isUserLoggedIn()" class="nav-link" href="/logout"  style="color:black;">Log out</a></li> 
+         </ul>
+        
+     <!-- </form> -->
+ </nav>

@@ -1,0 +1,57 @@
+.navbar-custom {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+ 
+}
+
+/* .section1 {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+  } */
+  
+.navbar-nav ab {
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+  }
+  
+  .container p {
+    margin-right: 10px; /* Adjust spacing between text and button */
+  }
+
+  .sidenav-container {
+    height: 100%;
+  }
+ --------------------------------------------
+ .sidenav {
+    height: 100%;
+    width: 20px;
+    max-width: 20%; /* Set maximum width */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    padding-top: 20px;
+    transition: transform 0.3s ease; /* Add transition effect for smooth animation */
+    transform: translateX(-100%);
+  }
+  
+  .sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  .main-content {
+    margin-left: 200px;
+    padding: 20px;
+  }

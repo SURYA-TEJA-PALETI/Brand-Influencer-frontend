@@ -1,0 +1,48 @@
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+    <div> <a class="navbar-brand " style="color: black;" href="#">
+            <h2>CollabHere!</h2>
+        </a></div>
+    <!-- <form class="form-inline px-3"> -->
+    <ul class="navbar-nav">
+
+        <li>
+            <a style="color:black;font-weight: bold;">Welcome back, {{user}}</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <!-- <li><button routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li>  -->
+
+        <li><button href="logout" type="button" class="btn btn-danger mr-3">Log out</button></li>
+    </ul>
+
+    <!-- </form> -->
+</nav>
+<!-- <h1>Hello {{user}}, welcome to our application</h1> -->
+<app-footer></app-footer>
+<br>
+<br>
+
+<!-- <div class="container">
+
+ 
+        <p>Create campaign using this button</p>
+        <button (click)="createCampaign()">Create Campaign</button>
+</div> -->
+
+<!-- <div class="container" *ngIf="welcomemessagefromService">
+    <h2>Your message from backend </h2>
+    {{welcomemessagefromService}}
+</div> -->
+
+ <div class="sidenav">
+    <a (click)="navigateTo('/dashboard/surya')">Dashboard</a>
+  <a (click)="navigateTo('/profile')">Profile</a>
+
+  <a (click)="navigateTo('/campaign')">Create Campaigns</a>
+  <a (click)="navigateTo('/campaignsList')">Your Campaigns</a>
+  </div>
+  <div class="main-content">
+    <ng-content></ng-content>
+  </div> 
+  
+ 

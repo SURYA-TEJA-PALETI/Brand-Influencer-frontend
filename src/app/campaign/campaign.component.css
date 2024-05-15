@@ -1,0 +1,63 @@
+.campaign-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+/*   
+  button {
+    display: block; */
+    /* width: 100%; */
+    /* padding: 10px;
+    border: none;
+    border-radius: 5px; */
+    /* background-color: ; */
+    /* color: white; */
+    /* font-size: 16px;
+    cursor: pointer;
+  } */
+  
+  /* button:hover {
+    background-color: #45a049;
+  }
+   */
+  .platform-input {
+    margin-top: 5px;
+  }
+  .navbar-custom {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+ 
+}
+
+/* .section1 {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+  } */
+  
+.navbar-nav ab {
+    font-weight: bold;
+  }  

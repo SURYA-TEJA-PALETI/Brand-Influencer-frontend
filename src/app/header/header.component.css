@@ -1,0 +1,13 @@
+.navbar-custom {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+ 
+}
+
+/* .section1 {
+    background: linear-gradient(to bottom, #dd2476, #ff512f);
+  } */
+  
+.navbar-nav a {
+    font-weight: bold;
+  }
+  

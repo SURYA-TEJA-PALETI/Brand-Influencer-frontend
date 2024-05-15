@@ -1,0 +1,69 @@
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+    <div> <a class="navbar-brand " style="color: black;" href="#">
+            <h2>CollabHere!</h2>
+        </a></div>
+    <!-- <form class="form-inline px-3"> -->
+    <!-- <ul class="navbar-nav">
+
+        <li>
+            <a style="color:black;font-weight: bold;">Welcome back, {{user}}</a>
+        </li>
+    </ul> -->
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <!-- <li><button routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li>  -->
+
+        <li><button href="logout" type="button" class="btn btn-danger mr-3">Log out</button></li>
+    </ul>
+
+    <!-- </form> -->
+</nav>
+<!-- <h1>Hello {{user}}, welcome to our application</h1> -->
+<!-- <app-footer></app-footer> -->
+<br>
+<br>
+<h4 style="text-align: center;"> Your Profile</h4>
+<br>
+
+<div *ngIf="showSuccessMessage" class="alert alert-success" role="alert">
+    Profile saved successfully.
+  </div>
+<form (ngSubmit)="saveProfile()" #profileForm="ngForm" class="container">
+    <div class="form-group row">
+      <label for="firstname" class="col-sm-3 col-form-label">Firstname:</label>
+      <div class="col-sm-9">
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="user.firstname" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastname" class="col-sm-3 col-form-label">last Name:</label>
+        <div class="col-sm-9">
+          <input type="text" id="lastname" name="lastname" [(ngModel)]="user.lastname" class="form-control" required>
+        </div>
+      </div>
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">Email:</label>
+      <div class="col-sm-9">
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number:</label>
+      <div class="col-sm-9">
+        <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="brandDetails" class="col-sm-3 col-form-label">Brand Deatils:</label>
+      <div class="col-sm-9">
+        <textarea id="brandDetails" name="address" [(ngModel)]="user.brandDetails" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <button type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="goToDashboard()">Back to Dashboard</button>
+      </div>
+    </div>
+  </form>
+  

@@ -1,0 +1,134 @@
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+  <div> <a class="navbar-brand "style="color: black;"  href="#">
+       <h2>CollabHere!</h2>
+   </a></div>
+ 
+</nav>
+
+
+<br><br>
+
+	<div class="container login-form mt-4 ">
+		<!-- Default form login -->
+    <div class="row">
+		<form class=" border p-5 mx-auto" (ngSubmit)="handleJWTAuthLogin()"  [formGroup]="loginForm">
+
+			<p class="h3 mb-3" style="color:blue;">Login Here!!</p>
+			<div class="alert alert-danger" role="alert" *ngIf="!isLoginValid">
+        {{errorMessage}}
+    </div>
+
+
+    <div class="form-group">
+      <label for="username">Username</label> 
+      <input type="text" id="username" name="username" class="form-control mb-3" placeholder="Enter Username"  [class.is-invalid]="
+      loginForm.get('username').invalid && loginForm.get('username').touched
+    "  formControlName="username" required>
+    <div
+    *ngIf="
+      loginForm.get('username').invalid && loginForm.get('username').touched
+    "
+  >
+    <span
+      *ngIf="loginForm.get('username').errors?.['required']"
+      class="text-danger"
+      >Username is required</span
+    >
+    <span
+      *ngIf="loginForm.get('username').errors?.['minlength']"
+      class="text-danger"
+      >Username must be atleast 3 characters</span
+    >
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="password">Password</label>
+  <input type="password" class="form-control mb-3" placeholder="Enter Password"  id="password" 
+  [class.is-invalid]="
+  loginForm.get('password').invalid && loginForm.get('password').touched
+"  formControlName="password" required>
+<div
+*ngIf="
+  loginForm.get('password').invalid && loginForm.get('password').touched
+"
+>
+<span
+  *ngIf="loginForm.get('password').errors?.['required']"
+  class="text-danger"
+  >Password is required</span
+>
+</div>
+<div
+*ngIf="
+  loginForm.get('password').invalid && loginForm.get('password').touched
+"
+>
+<span
+  class="block"
+  [ngClass]="{
+    'text-success': loginForm
+      .get('password')
+      .value?.match('^(?=.*[A-Z])'),
+    'text-danger': !loginForm
+      .get('password')
+      .value?.match('^(?=.*[A-Z])')
+  }"
+  >Password must contain atleast one uppercase letter.</span
+><br />
+
+<span
+  class="block"
+  [ngClass]="{
+    'text-success': loginForm
+      .get('password')
+      .value?.match('(?=.*[a-z])'),
+    'text-danger': !loginForm
+      .get('password')
+      .value?.match('^(?=.*[a-z])')
+  }"
+  >Password must contain atleast atleast one lowercase letter.</span
+><br />
+<span
+  class="block"
+  [ngClass]="{
+    'text-success': loginForm
+      .get('password')
+      .value?.match('(.*[0-9].*)'),
+    'text-danger': !loginForm
+    .get('password')
+    .value?.match('(.*[0-9].*)')
+  }"
+  >Password must contain atleast one digit.</span
+><br />
+<span
+  class="block"
+  [ngClass]="{
+    'text-success': loginForm
+      .get('password')
+      .value?.match('(?=.*[!@#$%^&*])'),
+    'text-danger': !loginForm
+    .get('password')
+    .value?.match('(?=.*[!@#$%^&*])')
+  }"
+  >Password must contain atleast atleast one special character.</span
+><br />
+<span
+  class="block"
+  [ngClass]="{
+    'text-success': loginForm.get('password').value?.match('.{8,}'),
+    'text-danger': !loginForm.get('password').value?.match('.{8,}')
+  }"
+  >Password must be at least 8 characters long.</span
+>
+</div>
+</div>
+<p>
+  <button class="btn btn-primary login mt-2" type="submit" [disabled]="!loginForm.valid">Login</button> 
+   <a href="signup" class="btn btn-link"
+    >Don't have an account yet? Sign Up</a
+  >
+</p>
+</form>
+</div>
+</div>

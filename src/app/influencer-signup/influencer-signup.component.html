@@ -1,0 +1,510 @@
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+  <div> <a class="navbar-brand "style="color: black;"  href="#">
+       <h2>CollabHere!</h2>
+   </a></div>
+   <!-- <form class="form-inline px-3"> -->
+       <ul class="navbar-nav">
+          
+           <li>
+               <a   style="color:black;" >Influencer</a>
+           </li>
+       </ul>
+   <ul class="navbar-nav navbar-collapse justify-content-end">
+          <li><button routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li> 
+
+         <li><button routerLink="/signup/brand" type="button" class="btn btn-primary mr-3">Sign up as business</button></li> 
+       </ul>
+      
+   <!-- </form> -->
+</nav>
+
+
+
+
+
+
+
+
+
+<div class="container signup-form mt-4">
+    <!-- <div
+      class="alert alert-success mt-4 pt-4 col-12 col-md-12 col-lg-6"
+      style="margin-left: 26%; text-align: center"
+      role="alert"
+      *ngIf="formSubmitted"
+    >
+      Successfully Signed up !!
+    </div>
+    <div *ngIf="formSubmitted">
+      <a
+        href="#"
+        class="btn text-white login mt-2"
+        style="margin-left: 26%; text-align: center"
+        routerLink="/login"
+        >Login</a
+      >
+    </div> -->
+  
+    <div class="row">
+      <form
+        class="border p-5 mx-auto"
+        [formGroup]="influencersignupForm"
+        (submit)="onSubmitSignup()"
+        *ngIf="!formSubmitted"
+      >
+        <p class="h3 mb-3" style="color: blue">
+          Creating an account as Influencer!!
+        </p>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <label for="firstname">Firstname</label>
+              <input
+                type="text"
+                formControlName="firstname"
+                [class.is-invalid]="
+                  influencersignupForm.get('firstname').invalid &&
+                  influencersignupForm.get('firstname').touched
+                "
+                id="firstname"
+                name="firstname"
+                class="form-control mb-3"
+                placeholder="Enter First Name"
+                required
+              />
+              <div
+                *ngIf="
+                  influencersignupForm.get('firstname').invalid &&
+                  influencersignupForm.get('firstname').touched
+                "
+              >
+                <span
+                  *ngIf="influencersignupForm.get('firstname').errors?.['required']"
+                  class="text-danger"
+                  >Firstname is required</span
+                >
+                <span
+                  *ngIf="influencersignupForm.get('firstname').errors?.['minlength']"
+                  class="text-danger"
+                  >Firstname must be atleast 4 characters</span
+                >
+                <span
+                  *ngIf="influencersignupForm.get('firstname').errors?.['pattern']"
+                  class="text-danger"
+                >
+                  First Name cannot have numbers</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <label for="lastname">Lastname</label>
+              <input
+                type="text"
+                formControlName="lastname"
+                [class.is-invalid]="
+                  influencersignupForm.get('lastname').invalid &&
+                  influencersignupForm.get('lastname').touched
+                "
+                id="lastname"
+                name="lastname"
+                class="form-control mb-3"
+                placeholder="Enter Last Name"
+                required
+              />
+              <div
+                *ngIf="
+                  influencersignupForm.get('lastname').invalid &&
+                  influencersignupForm.get('lastname').touched
+                "
+              >
+                <span
+                  *ngIf="influencersignupForm.get('lastname').errors?.['required']"
+                  class="text-danger"
+                  >Lastname is required</span
+                >
+                <span
+                  *ngIf="influencersignupForm.get('lastname').errors?.['minlength']"
+                  class="text-danger"
+                  >Lastname must be atleast 4 characters</span
+                >
+                <span
+                  *ngIf="influencersignupForm.get('lastname').errors?.['pattern']"
+                  class="text-danger"
+                >
+                  Last Name cannot have numbers</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  formControlName="username"
+                  [class.is-invalid]="
+                  influencersignupForm.get('username').invalid &&
+                  influencersignupForm.get('username').touched
+                  "
+                  id="username"
+                  name="username"
+                  class="form-control mb-3"
+                  placeholder="Enter User Name"
+                  required
+                />
+                <div
+                  *ngIf="
+                  influencersignupForm.get('username').invalid &&
+                  influencersignupForm.get('username').touched
+                  "
+                >
+                  <span
+                    *ngIf="influencersignupForm.get('username').errors?.['required']"
+                    class="text-danger"
+                    >Username is required</span
+                  >
+                  <span
+                    *ngIf="influencersignupForm.get('username').errors?.['minlength']"
+                    class="text-danger"
+                    >Username must be atleast 6 characters</span
+                  >
+                 
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <label for="email">EmailId</label>
+              <input
+                type="text"
+                formControlName="email"
+                [class.is-invalid]="
+                  influencersignupForm.get('email').invalid &&
+                  influencersignupForm.get('email').touched
+                "
+                id="email"
+                name="email"
+                class="form-control mb-3"
+                placeholder="Enter Email"
+                required
+              />
+              <div
+                *ngIf="
+                  influencersignupForm.get('email').invalid &&
+                  influencersignupForm.get('email').touched
+                "
+              >
+                <span
+                  *ngIf="influencersignupForm.get('email').errors?.['required']"
+                  class="text-danger"
+                  >EmailId is required</span
+                >
+                <span
+                  *ngIf="influencersignupForm.get('email').errors?.['pattern']"
+                  class="text-danger"
+                  >Please provide a valid email address</span
+                >
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                [class.is-invalid]="
+                  influencersignupForm.get('password').invalid &&
+                  influencersignupForm.get('password').touched
+                "
+                formControlName="password"
+                id="password"
+                name="password"
+                class="form-control mb-3"
+                placeholder="Enter Password"
+                required
+              />
+  
+              <div
+                *ngIf="
+                  influencersignupForm.get('password').invalid &&
+                  influencersignupForm.get('password').touched
+                "
+              >
+                <span
+                  *ngIf="influencersignupForm.get('password').errors?.['required']"
+                  class="text-danger"
+                  >Password is required</span
+                >
+              </div>
+  
+              <div
+                *ngIf="
+                  influencersignupForm.get('password').invalid &&
+                  influencersignupForm.get('password').touched
+                "
+              >
+                <span
+                  class="block"
+                  [ngClass]="{
+                    'text-success': influencersignupForm
+                      .get('password')
+                      .value?.match('^(?=.*[A-Z])'),
+                    'text-danger': !influencersignupForm
+                      .get('password')
+                      .value?.match('^(?=.*[A-Z])')
+                  }"
+                  >Password must contain atleast one uppercase letter.</span
+                ><br />
+  
+                <span
+                  class="block"
+                  [ngClass]="{
+                    'text-success': influencersignupForm
+                      .get('password')
+                      .value?.match('(?=.*[a-z])'),
+                    'text-danger': !influencersignupForm
+                      .get('password')
+                      .value?.match('^(?=.*[a-z])')
+                  }"
+                  >Password must contain atleast atleast one lowercase
+                  letter.</span
+                ><br />
+                <span
+                  class="block"
+                  [ngClass]="{
+                    'text-success': influencersignupForm
+                      .get('password')
+                      .value?.match('(.*[0-9].*)'),
+                    'text-danger': !influencersignupForm
+                      .get('password')
+                      .value?.match('(.*[0-9].*)')
+                  }"
+                  >Password must contain atleast one digit.</span
+                ><br />
+                <span
+                  class="block"
+                  [ngClass]="{
+                    'text-success': influencersignupForm
+                      .get('password')
+                      .value?.match('(?=.*[!@#$%^&*])'),
+                    'text-danger': !influencersignupForm
+                      .get('password')
+                      .value?.match('(?=.*[!@#$%^&*])')
+                  }"
+                  >Password must contain atleast atleast one special
+                  character.</span
+                ><br />
+                <span
+                  class="block"
+                  [ngClass]="{
+                    'text-success': influencersignupForm
+                      .get('password')
+                      .value?.match('.{8,}'),
+                    'text-danger': !influencersignupForm
+                      .get('password')
+                      .value?.match('.{8,}')
+                  }"
+                  >Password must be at least 8 characters long.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+<!-- 
+        <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="companyname">Company Name</label>
+            <input
+              type="text"
+              formControlName="companyname"
+              [class.is-invalid]="
+                influencersignupForm.get('companyname').invalid &&
+                influencersignupForm.get('companyname').touched
+              "
+              id="companyname"
+              name="companyname"
+              class="form-control mb-3"
+              placeholder="Enter Company Name"
+              required
+            />
+            <div
+              *ngIf="
+                influencersignupForm.get('companyname').invalid &&
+                influencersignupForm.get('companyname').touched
+              "
+            >
+              <span
+                *ngIf="influencersignupForm.get('companyname').errors?.['required']"
+                class="text-danger"
+                >Company Name is required</span
+              >
+              <span
+                *ngIf="influencersignupForm.get('companyname').errors?.['minlength']"
+                class="text-danger"
+                >Company Name must be atleast 4 characters</span
+              >
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="companysite">Company Website</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"
+              formControlName="companysite"
+              [class.is-invalid]="
+                influencersignupForm.get('companysite').invalid &&
+                influencersignupForm.get('companysite').touched
+              "
+              id="companysite"
+              name="companysite"
+              class="form-control mb-3"
+              placeholder="Enter Company Website URL"
+              required
+            ></textarea>
+            <div
+              *ngIf="
+                influencersignupForm.get('companysite').invalid &&
+                influencersignupForm.get('companysite').touched
+              "
+            >
+              <span
+                *ngIf="influencersignupForm.get('companysite').errors?.['required']"
+                class="text-danger"
+                >Company website is required</span
+              >
+              <span
+              *ngIf="influencersignupForm.get('companysite').errors?.['pattern']"
+              class="text-danger"
+            >
+             Enter a valid website</span
+            >
+              
+            </div>
+          </div>
+        </div>
+  </div> -->
+  
+  
+
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label for="phonenumber">Phone number</label>
+        <input
+          type="text"
+          formControlName="phonenumber"
+          [class.is-invalid]="
+            influencersignupForm.get('phonenumber').invalid &&
+            influencersignupForm.get('phonenumber').touched
+          "
+          id="phonenumber"
+          name="phonenumber"
+          class="form-control mb-3"
+          placeholder="Enter Business phone number"
+          required
+        />
+        <div
+          *ngIf="
+            influencersignupForm.get('phonenumber').invalid &&
+            influencersignupForm.get('phonenumber').touched
+          "
+        >
+          <span
+            *ngIf="influencersignupForm.get('phonenumber').errors?.['required']"
+            class="text-danger"
+            >Business phone number is required</span
+          >
+         
+          <span
+            *ngIf="influencersignupForm.get('phonenumber').errors?.['pattern']"
+            class="text-danger"
+          >
+          Please enter a valid 10 digit phone number excluding +91.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <label >Gender</label>&nbsp;
+    <label >
+      <input type="radio" formControlName="gender" value="male"> Male&nbsp;
+      
+    </label>
+    <label>
+      <input type="radio" formControlName="gender" value="female"> Female&nbsp;
+     
+    </label>
+    
+  
+    <div *ngIf="influencersignupForm.get('gender').errors?.['required'] && (influencersignupForm.controls.dirty || influencersignupForm.controls.touched)" class="error">
+      Please select a gender.
+    </div>
+  
+  </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="row">
+
+ <div class="col-xs-12 col-sm-12 col-md-12"> 
+      <div class="form-group">
+        <label >Select your category</label>&nbsp;
+        <label>
+          <input type="checkbox" formControlName="option1" id="option1"> Helthcare 
+        </label>&nbsp;
+        <label>
+          <input type="checkbox" formControlName="option2" id="option2"> Banking
+        </label>&nbsp;
+        <label>
+          <input type="checkbox" formControlName="option3" id="option3"> Clothing
+        </label>
+    
+        <div *ngIf="!areAnyCheckboxesChecked()" class="error">
+          Please select at least one option.
+        </div>
+  
+  </div>
+  </div> 
+</div> -->
+
+
+
+  
+        <div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!influencersignupForm.valid"
+          >
+            Create acount
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

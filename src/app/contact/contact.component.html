@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+  
+  <br><br>
+  <p class="h3 mb-3 mx-auto" style="color:blue; text-align: center;">Contact us through this form...</p>
+      <div class="container login-form mt-4 ">
+          <!-- Default form login -->
+      <div class="row">
+          <form class=" border p-5 mx-auto" (ngSubmit)="onSubmit()"  [formGroup]="contactusForm">
+  
+              
+              <div class="alert alert-danger" role="alert" *ngIf="!iscontactusValid">
+         Invalid fields.
+      </div>
+  
+  
+      <div class="form-group">
+        <label for="name">Name</label> 
+        <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Enter Name"  [class.is-invalid]="
+        contactusForm.get('name').invalid && contactusForm.get('name').touched
+      "  formControlName="name" required>
+      <div
+      *ngIf="
+      contactusForm.get('name').invalid && contactusForm.get('name').touched
+      "
+    >
+      <span
+        *ngIf="contactusForm.get('name').errors?.['required']"
+        class="text-danger"
+        >Name is required</span
+      >
+      <span
+        *ngIf="contactusForm.get('username').errors?.['minlength']"
+        class="text-danger"
+        >Name must be atleast 5 characters</span
+      >
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="name">Email Address</label> 
+    <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Enter Email ID"  [class.is-invalid]="
+    contactusForm.get('name').invalid && contactusForm.get('name').touched
+  "  formControlName="name" required>
+  <div
+  *ngIf="
+  contactusForm.get('name').invalid && contactusForm.get('name').touched
+  "
+>
+  <span
+    *ngIf="contactusForm.get('name').errors?.['required']"
+    class="text-danger"
+    >Name is required</span
+  >
+  <span
+    *ngIf="contactusForm.get('username').errors?.['minlength']"
+    class="text-danger"
+    >Name must be atleast 5 characters</span
+  >
+</div>
+</div>
+<div class="col-xs-6 ">
+    <div class="form-group">
+      <label for="companysite">Your query</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+        formControlName="companysite"
+        [class.is-invalid]="
+        contactusForm.get('companysite').invalid &&
+        contactusForm.get('companysite').touched
+        "
+        id="companysite"
+        name="companysite"
+        class="form-control mb-3"
+        placeholder=" Enter your query here.."
+        required
+      ></textarea>
+      <div
+        *ngIf="
+        contactusForm.get('companysite').invalid &&
+        contactusForm.get('companysite').touched
+        "
+      >
+        <span
+          *ngIf="contactusForm.get('companysite').errors?.['required']"
+          class="text-danger"
+          >Company website is required</span
+        >
+        <span
+        *ngIf="contactusForm.get('companysite').errors?.['pattern']"
+        class="text-danger"
+      >
+       Enter your Query here..</span
+      >
+        
+      </div>
+    </div>
+  </div>
+
+
+  <p>
+    <button class="btn btn-primary login mt-2" type="submit" [disabled]="!contactusForm.valid">Submit</button> 
+     
+  </p>
+  </form>
+  </div>
+  </div>

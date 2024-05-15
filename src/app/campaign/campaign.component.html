@@ -1,0 +1,124 @@
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+    <div> <a class="navbar-brand " style="color: black;" href="#">
+            <h2>CollabHere!</h2>
+        </a></div>
+    <!-- <form class="form-inline px-3"> -->
+    <!-- <ul class="navbar-nav">
+
+        <li>
+            <a style="color:black;font-weight: bold;">Welcome back, {{user}}</a>
+        </li>
+    </ul> -->
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <!-- <li><button routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li>  -->
+
+        <li><button href="logout" type="button" class="btn btn-danger mr-3">Log out</button></li>
+    </ul>
+
+    <!-- </form> -->
+</nav>
+<!-- <h1>Hello {{user}}, welcome to our application</h1> -->
+<!-- <app-footer></app-footer> -->
+<br>
+<br>
+
+<!-- <form class="campaign-form" [formGroup]="campaignForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="brandAccount">Brand Account:</label>
+      <input type="text" id="brandAccount" formControlName="brandAccount">
+    </div>
+  
+    <div class="form-group">
+      <label for="brandName">Brand Name</label>
+      <input type="text" id="brandName" name="brandName" [(ngModel)]="formData.brandName">
+    </div>
+  
+    <div class="form-group">
+      <label for="brandSummary">Give a quick summary of your offer</label>
+      <textarea id="brandSummary" name="brandSummary" [(ngModel)]="formData.brandSummary"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="influencerWork">What should be done by influencer</label>
+      <textarea id="influencerWork" name="influencerWork" [(ngModel)]="formData.influencerWork"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="influencerFee">Fee Amount</label>
+      <input type="text" id="influencerFee" name="influencerFee" [(ngModel)]="formData.influencerFee">
+    </div>
+  
+    <div class="form-group">
+        <label>
+         Price is Negotiable?
+          <input type="checkbox" formControlName="negotiateFee">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="userPlatforms">User Platforms:</label>
+        <div *ngFor="let platform of campaignForm.get('userPlatform').value; let i = index" class="platform-input">
+          <input type="text" [formControlName]="i">
+          <span>{{ platform }}</span> 
+        </div>
+      </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+ -->
+
+ <div *ngIf="showSuccessMessage" class="alert alert-success" role="alert">
+    Campaign created successfully.
+  </div>
+  <form class="campaign-form" [formGroup]="campaignForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="brandAccount">Your brand account</label>
+      <input type="text" id="brandAccount" formControlName="brandAccount">
+    </div>
+  
+    <div class="form-group">
+      <label for="brandName">Offer name</label>
+      <input type="text" id="brandName" formControlName="brandName">
+    </div>
+  
+    <div class="form-group">
+      <label for="brandSummary">Give a quick summary of your offer</label>
+      <textarea id="brandSummary" formControlName="brandSummary"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="influencerWork">What should be done by the influencer</label>
+      <textarea id="influencerWork" formControlName="influencerWork"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="influencerFee">Influencer Fee</label>
+      <input type="text" id="influencerFee" formControlName="influencerFee">
+    </div>
+  
+    <div class="form-group">
+      <label>
+       Fee negotiable?
+        <input type="checkbox" formControlName="negotiateFee">
+      </label>
+    </div>
+<!--   
+    <div class="form-group">
+      <label for="userPlatforms">User Platforms:</label>
+      <div *ngFor="let platform of campaignForm.get('userPlatform').value; let i = index" class="platform-input">
+        <input type="text" [formControlName]="i">
+        <span>{{ platform }}</span>
+      </div>
+    </div> -->
+
+    <div class="form-group">
+        <label for="userPlatforms">What platforms are you interested in?</label>
+        <select id="userPlatforms" formControlName="userPlatform">
+          <option *ngFor="let platform of platformOptions" [value]="platform.toLowerCase()">{{ platform }}</option>
+        </select>
+      </div>
+      <div class="text-center mt-3">
+    <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+  
+  

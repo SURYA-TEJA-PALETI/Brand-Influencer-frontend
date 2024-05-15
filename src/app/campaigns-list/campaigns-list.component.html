@@ -1,0 +1,54 @@
+
+<nav class="navbar navbar-custom ab navbar-expand-md ">
+    <div> <a class="navbar-brand " style="color: black;" href="#">
+            <h2>CollabHere!</h2>
+        </a></div>
+    <!-- <form class="form-inline px-3"> -->
+    <!-- <ul class="navbar-nav">
+
+        <li>
+            <a style="color:black;font-weight: bold;">Welcome back, {{user}}</a>
+        </li>
+    </ul> -->
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <!-- <li><button routerLink="login" type="button" class="btn btn-primary mr-3">Log in</button></li>  -->
+
+        <li><button href="logout" type="button" class="btn btn-danger mr-3">Log out</button></li>
+    </ul>
+
+    <!-- </form> -->
+</nav>
+<!-- <h1>Hello {{user}}, welcome to our application</h1> -->
+<!-- <app-footer></app-footer> -->
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let campaign of campaigns">
+        <div class="card mb-3" [class.expanded]="campaign.expanded" (click)="toggleExpansion(campaign)">
+          <div class="card-body">
+            <h5 class="card-title">{{ campaign.name }}</h5>
+            <p class="card-text"><b>Created By:</b> {{ campaign.Created_by }}</p>
+            
+            <!-- Additional content -->
+            <div class="additional-content" *ngIf="campaign.expanded">
+                <p class="card-text"><b>Camapign description:</b> {{ campaign.campaign_description }}</p>
+                <p class="card-text"><b>Tasks to Influencer:</b> {{ campaign.task_to_influencer }}</p>
+                <p class="card-text"><b>Compensation:</b> {{ campaign.influencer_fee }}$</p>
+                <p class="card-text"><b>Is the fee negotiable?:</b> {{ campaign.negotiable }}</p>
+                <p class="card-text"><b>Platforms the influencer need to publish:</b> {{ campaign.platforms }}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" (click)="goToDashboard()">Back to Dashboard</button>
+      </div>
+  </div>
+  
+
